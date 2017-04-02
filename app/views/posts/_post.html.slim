@@ -3,5 +3,5 @@
     .thumbnail
       = image_tag 'https://20930-presscdn-pagely.netdna-ssl.com/wp-content/themes/inbenta/img/icons/avatar.svg', size: '200'
       .caption.text-center
-        h3 #{post.title}
-        p #{post.body.first(140)}
+        h3 #{truncate post.title, length: 40}
+        p #{truncate post.body, length: 140}
