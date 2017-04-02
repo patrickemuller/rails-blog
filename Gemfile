@@ -24,6 +24,10 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise', '~> 4.2.1'
 # ActiveAdmin is a complete Admin Dashboard for Rails apps
 gem 'activeadmin', github: 'activeadmin'
+# RedCarpet allow text parsing like Markdown and links/image inside text
+gem 'redcarpet', '~> 3.4.0'
+# CodeRay is used for syntax Highlight on HTML
+gem 'coderay', '~> 1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

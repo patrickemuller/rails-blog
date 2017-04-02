@@ -2,4 +2,4 @@
   h1 #{@post.title}
   
   .content
-    = @post.body
+    = convert_to_markdown(@post.body)
