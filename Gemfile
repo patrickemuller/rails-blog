@@ -18,6 +18,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Twitter Bootstrap CSS Framework
 gem 'bootstrap-sass', '~> 3.3.7'
+# Devise is a complete User Management for Rails apps
+gem 'devise', '~> 4.2.1'
+# ActiveAdmin is a complete Admin Dashboard for Rails apps
+gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
