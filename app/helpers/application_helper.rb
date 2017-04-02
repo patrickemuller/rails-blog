@@ -1,7 +1,11 @@
 # Enable Syntax Highlight on Markdown
 class CodeRayify < Redcarpet::Render::HTML
   def block_code(code, language)
-    CodeRay.scan(code, language).div
+    if language.present?
+      CodeRay.scan(code, language).div
+    else
+      CodeRay.scan(code, 'html').div
+    end
   end
 end
 
