@@ -10,3 +10,11 @@ print '========> Creating Basic Admins....'
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 print "DONE! \n\n"
+
+print '========> Creating Basic Posts....'
+
+100.times do |index|
+  Post.create!(slug: "post-#{index}", title: "Post #{index}", body: "Lorem ipsum \n dolor \n sit \n amet")
+end
+
+print "DONE! \n\n"
