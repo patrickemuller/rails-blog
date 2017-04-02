@@ -219,7 +219,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise (~> 4.2.1)
   jquery-rails
-  pg (~> 0.15)
+  pg (~> 0.18)
   rails (= 4.2.7.1)
   redcarpet (~> 3.4.0)
   sass-rails (~> 5.0)
