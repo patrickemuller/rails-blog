@@ -12,5 +12,10 @@
  *
  */
 
- @import 'bootstrap-sprockets';
- @import 'bootstrap';
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.lateralContentBorder {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}

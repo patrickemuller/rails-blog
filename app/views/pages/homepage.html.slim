@@ -1,11 +1,4 @@
 .container-fluid
   .row
     - @posts.each do |post|
-      .col-xs-12.col-sm-6.col-md-4.col-lg-3
-        = link_to '#', target: '_blank' do
-          .thumbnail
-            = image_tag 'https://20930-presscdn-pagely.netdna-ssl.com/wp-content/themes/inbenta/img/icons/avatar.svg', size: '200'
-            .caption
-              h3 "#{post.title}"
-              p "#{post.body.first(140)}"
-      
+      = render partial: 'posts/post', locals: { post: post }

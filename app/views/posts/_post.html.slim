@@ -1,0 +1,7 @@
+.col-xs-12.col-sm-6.col-md-4.col-lg-3
+  = link_to post_path(post.slug), target: '_blank' do
+    .thumbnail
+      = image_tag 'https://20930-presscdn-pagely.netdna-ssl.com/wp-content/themes/inbenta/img/icons/avatar.svg', size: '200'
+      .caption.text-center
+        h3 #{post.title}
+        p #{post.body.first(140)}
