@@ -2,3 +2,7 @@
   .row
     - @posts.each do |post|
       = render partial: 'posts/post', locals: { post: post }
+
+  .row
+    .col-xs-12.text-center
+      = paginate @posts, theme: 'twitter-bootstrap-3'

@@ -28,6 +28,9 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'redcarpet', '~> 3.4.0'
 # CodeRay is used for syntax Highlight on HTML
 gem 'coderay', '~> 1.1.1'
+# Add pagination functionality
+gem 'kaminari', '~> 1.0.1'
+gem 'bootstrap-kaminari-views'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
