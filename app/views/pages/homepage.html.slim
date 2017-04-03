@@ -1,8 +1,31 @@
-.container-fluid
-  .row
-    - @posts.each do |post|
-      = render partial: 'posts/post', locals: { post: post }
+header.intro-header style=("background-color: #0085A1") 
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        .site-heading
+          h1 Personal Blog
+          hr.small
+          span.subheading Take a coffee, enjoy and learn some stuff =D
 
-  .row
-    .col-xs-12.text-center
-      = paginate @posts, theme: 'twitter-bootstrap-3'
+.container
+  - @posts.each do |post|
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        .post-preview
+          = link_to post_path(post.slug) do
+            h2.post-title
+              = post.title
+            h3.post-subtitle
+              = truncate(strip_tags(convert_to_markdown(post.body)), length: 140)
+          p.post-meta
+            / | Posted by
+            / a href="#"  Start Bootstrap
+            | on #{post.created_at.strftime("%d %B %Y")}
+        hr
+
+  / Pagination
+  ul.pager
+    li.next
+      = link_to_next_page @posts, 'Older Posts'
+    li.previous
+      = link_to_previous_page @posts, 'Newer Posts'

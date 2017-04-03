@@ -1,4 +1,13 @@
-.navbar.navbar-default
+nav.navbar.navbar-default.navbar-custom.navbar-fixed-top
   .container-fluid
-    .navbar-header
-      = link_to 'Patrickemuller', root_path, class: 'navbar-brand'
+    .navbar-header.page-scroll
+      / button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+      /   span.sr-only Toggle navigation
+      /   | Menu
+      /   i.fa.fa-bars
+      = link_to 'Patrick E Muller', root_path, class: 'navbar-brand'
+
+    / #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    /   ul.nav.navbar-nav.navbar-right
+    /     li
+    /       a href="index.html"  Homepage
