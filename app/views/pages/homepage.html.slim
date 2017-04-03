@@ -1,7 +1,7 @@
 header.intro-header style=("background-color: #0085A1") 
   .container
     .row
-      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+      .col-xs-12
         .site-heading
           h1 Personal Blog
           hr.small
@@ -10,7 +10,7 @@ header.intro-header style=("background-color: #0085A1")
 .container
   - @posts.each do |post|
     .row
-      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+      .col-xs-12
         .post-preview
           = link_to post_path(post.slug) do
             h2.post-title
