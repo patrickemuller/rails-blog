@@ -31,6 +31,8 @@ gem 'coderay', '~> 1.1.1'
 # Add pagination functionality
 gem 'kaminari', '~> 1.0.1'
 gem 'bootstrap-kaminari-views'
+# Icons and other beautiful assets
+gem 'font-awesome-rails', '~> 4.7.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
