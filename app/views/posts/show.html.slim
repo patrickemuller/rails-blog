@@ -1,5 +1,15 @@
-.container.lateralContentBorder
-  h1 #{@post.title}
-  
-  .content
-    = convert_to_markdown(@post.body)
+header.intro-header style=("background-color: #0085A1")
+  .container
+    .row
+      .col-xs-12
+        .post-heading
+          h1 = @post.title
+          / h2.subheading Problems look mighty small from 150 miles up
+          span.meta
+            | on #{@post.created_at.strftime("%d %B %Y")}
+
+article
+  .container
+    .row
+      .col-xs-12
+        = convert_to_markdown(@post.body)
