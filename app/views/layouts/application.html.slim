@@ -1,0 +1,25 @@
+doctype 5
+
+html
+  head
+    script src="https://www.google.com/jsapi" type="text/javascript"
+    meta[charset="utf-8"]
+    /[if lt IE 9]
+      script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"
+      meta[content="text/html; charset=utf-8" http-equiv="Content-Type"]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"]
+    / Default Google meta tags
+    meta name="robots" content="index, follow"
+    meta name="google" content="translate"
+    / Google Fonts
+    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  body
+    = render partial: 'partials/header'
+    = yield
+    = render partial: 'partials/footer'
