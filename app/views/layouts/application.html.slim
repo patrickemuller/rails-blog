@@ -11,8 +11,21 @@ html
       meta[content="text/html; charset=utf-8" http-equiv="Content-Type"]
     meta[name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"]
     / Default Google meta tags
+    meta name="url" content="#{request.url}"
     meta name="robots" content="index, follow"
     meta name="google" content="translate"
+    meta name="keywords" content="ruby, rails, ruby on rails, entrepreneurship, knowledge, web development"
+    meta name="description" content="My Personal Blog with tips for Ruby on Rails and my experience as Digital Entrepreneur"
+    / OG Meta tags
+    meta property="og:type" content="blog"
+    meta property="og:title" content="Patrick's Blog"
+    meta property="og:site_name" content="patrickemuller.com"
+    meta property="og:description" content="My Personal Blog with tips for Ruby on Rails and my experience as Digital Entrepreneur"
+    / Twitter Cards
+    meta name="twitter:url" content="#{request.url}"
+    meta name="twitter:card" content="Patrick's Blog"
+    meta name="twitter:site" content="@patrickemuller"
+    meta name="twitter:description" content="My Personal Blog with tips for Ruby on Rails and my experience as Digital Entrepreneur"
     / Google Fonts
     link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
     link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
