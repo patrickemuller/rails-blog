@@ -1,3 +1,14 @@
+- set_meta_tags title: @post.title,
+                description: truncate(strip_tags(convert_to_markdown(@post.body)), length: 140),
+                og: { type: "blog",
+                      title: @post.title,
+                      site_name: "patrickemuller.com",
+                      description: truncate(strip_tags(convert_to_markdown(@post.body)), length: 140) },
+                twitter: { url: request.url,
+                           card: @post.title,
+                           site: "@patrickemuller",
+                           description: truncate(strip_tags(convert_to_markdown(@post.body)), length: 140) }
+
 header.intro-header style=("background-color: #0085A1")
   .container
     .row

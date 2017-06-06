@@ -33,6 +33,8 @@ gem 'kaminari', '~> 1.0.1'
 gem 'bootstrap-kaminari-views'
 # Icons and other beautiful assets
 gem 'font-awesome-rails', '~> 4.7.0.1'
+# Meta Tags is a simple way to improve SEO of dynamic pages on Rails
+gem 'meta-tags', '~> 2.4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
