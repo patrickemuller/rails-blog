@@ -24,8 +24,3 @@ article
     .row
       .col-xs-12
         = convert_to_markdown(@post.body)
-    
-    .row
-      .col-xs-12
-        / Load JS script for comments
-        = render partial: 'partials/disqus'
