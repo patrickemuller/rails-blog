@@ -1,9 +1,11 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/9c6936bd6ed00b662461/maintainability)](https://codeclimate.com/github/patrickemuller/rails-blog/maintainability)
+
 # Ruby on Rails Blog App
 
 * Main branch: master
-* Ruby version: 2.3.1
-* Rails version: 4.2.7.1
-* PG version: ~> 0.18
+* Ruby version: 2.7.0
+* Rails version: 5.1.3
+* PG version: ~> 1.2.2
 
 ## Features on this application
 
@@ -16,17 +18,16 @@
 
 To install (development environment) on your machine, just follow the tips above:
 
-    % git clone git@github.com:patrickemuller/rails-blog.git
+    git clone git@github.com:patrickemuller/rails-blog.git
 
 It assumes you have a machine equipped with Ruby, PostgreSQL, etc. If not, set up
 your machine with [this script](https://github.com/COSMITdev/env-setup)
 
 After setting up, you can run the application using:
 
-    % bin/rake db:reset && bin/rails server
+    bin/rake db:reset && bin/rails server
 
-For default we use THIN as development server, but you can use [Heroku Local](https://devcenter.heroku.com/articles/heroku-local) to simulate production
-environment on your local machine.
+For default WEBRICK is used as development server, but you can use [Heroku Local](https://devcenter.heroku.com/articles/heroku-local) to simulate production environment on your local machine.
 
 ## Creating feature branches
 
