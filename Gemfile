@@ -38,16 +38,15 @@ gem 'font-awesome-rails', '~> 4.7.0.1'
 gem 'meta-tags', '~> 2.13.0'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-end
-
-group :development do
   gem 'rubocop'
   gem 'rubocop-i18n'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+end
+
+group :development do
   gem 'spring'
 end
 
