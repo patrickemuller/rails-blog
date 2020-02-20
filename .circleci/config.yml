@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.0
+      - image: circleci/ruby:2.7.0-node-browsers
         environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -17,6 +17,10 @@ jobs:
           POSTGRES_PASSWORD: postgres
     steps:
       - checkout
+
+      - run:
+          name: Copying ENV file
+          command: cp .env.example .env
 
       - run:
           name: Which bundler?
@@ -42,7 +46,7 @@ jobs:
 
       - run:
           name: Database setup
-          command: bin/rails db:schema:load --trace
+          command: bin/rails db:setup --trace
 
       - run:
           name: Rubocop lint
@@ -52,11 +56,7 @@ jobs:
       - run:
           name: RSpec
           command: |
-            bundle exec rspec --profile 10 \
-                              --format RspecJunitFormatter \
-                              --out test_results/rspec.xml \
-                              --format progress \
-                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            bundle exec rspec
 
       - store_test_results:
           path: test_results
