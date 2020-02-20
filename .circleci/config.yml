@@ -20,7 +20,7 @@ jobs:
 
       - run:
           name: Which bundler?
-          command: bundle -v '2.1.4'
+          command: bundle -v
 
       - restore_cache:
           keys:
