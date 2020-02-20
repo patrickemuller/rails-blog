@@ -38,12 +38,17 @@ gem 'font-awesome-rails', '~> 4.7.0.1'
 gem 'meta-tags', '~> 2.13.0'
 
 group :development, :test do
+  # Rubocop Gems should always be updated
   gem 'byebug'
   gem 'rubocop'
   gem 'rubocop-i18n'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+  gem 'rspec-rails', '~> 3.9.0'
+  gem 'shoulda-matchers', '~> 4.3.0'
+  gem 'factory_bot_rails', '~> 5.1.1'
+  gem 'rails-controller-testing', '~> 1.0.4'
 end
 
 group :development do
