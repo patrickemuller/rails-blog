@@ -16,25 +16,21 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
     steps:
-      - checkout # special step to check out source code to working directory
+      - checkout
 
-      # Which version of bundler?
       - run:
           name: Which bundler?
           command: bundle -v '2.1.4'
 
-      # Restore bundle cache
-      # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
       - restore_cache:
           keys:
             - rails-blog-{{ checksum "Gemfile.lock" }}
             - rails-blog-
 
-      - run: # Install Ruby dependencies
+      - run:
           name: Bundle Install
           command: bundle check --path vendor/bundle || bundle install --deployment
 
-      # Store bundle cache for Ruby dependencies
       - save_cache:
           key: rails-blog-{{ checksum "Gemfile.lock" }}
           paths:
@@ -49,7 +45,12 @@ jobs:
           command: bin/rails db:schema:load --trace
 
       - run:
-          name: Run rspec in parallel
+          name: Rubocop lint
+          command: |
+            bundle exec rubocop
+
+      - run:
+          name: RSpec
           command: |
             bundle exec rspec --profile 10 \
                               --format RspecJunitFormatter \
@@ -57,7 +58,5 @@ jobs:
                               --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
 
-      # Save test results for timing analysis
-      - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+      - store_test_results:
           path: test_results
-      # See https://circleci.com/docs/2.0/deployment-integrations/ for example deploy configs
