@@ -47,6 +47,8 @@ group :development, :test do
   gem 'rubocop-rspec'
   gem 'rspec-rails', '~> 3.9.0'
   gem 'shoulda-matchers', '~> 4.3.0'
+  gem 'factory_bot_rails', '~> 5.1.1'
+  gem 'rails-controller-testing', '~> 1.0.4'
 end
 
 group :development do
