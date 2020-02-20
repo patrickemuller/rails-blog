@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 ruby '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -13,8 +15,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 5.0.0'
 # Simplify your views and HTML files
 gem 'slim-rails'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -30,8 +30,8 @@ gem 'redcarpet', '~> 3.4.0'
 # CodeRay is used for syntax Highlight on HTML
 gem 'coderay', '~> 1.1.1'
 # Add pagination functionality
-gem 'kaminari', '~> 1.0.1'
 gem 'bootstrap-kaminari-views'
+gem 'kaminari', '~> 1.0.1'
 # Icons and other beautiful assets
 gem 'font-awesome-rails', '~> 4.7.0.1'
 # Meta Tags is a simple way to improve SEO of dynamic pages on Rails
@@ -43,7 +43,11 @@ group :development, :test do
 end
 
 group :development do
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rubocop'
+  gem 'rubocop-i18n'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
   gem 'spring'
 end
 

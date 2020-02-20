@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Enable Syntax Highlight on Markdown
 class CodeRayify < Redcarpet::Render::HTML
   def block_code(code, language)
@@ -10,6 +12,7 @@ class CodeRayify < Redcarpet::Render::HTML
 end
 
 module ApplicationHelper
+  # rubocop:disable Rails/OutputSafety
   def convert_to_markdown(text)
     coderay = CodeRayify.new(filter_html: true, hard_wrap: true)
     options = {
@@ -20,4 +23,5 @@ module ApplicationHelper
     markdown = Redcarpet::Markdown.new(coderay, options)
     markdown.render(text).html_safe
   end
+  # rubocop:enable Rails/OutputSafety
 end
