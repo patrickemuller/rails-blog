@@ -20,7 +20,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Twitter Bootstrap CSS Framework
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 # Devise is a complete User Management for Rails apps
 gem 'devise', '~> 4.7.1'
 # ActiveAdmin is a complete Admin Dashboard for Rails apps
