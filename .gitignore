@@ -17,9 +17,7 @@
 # Environment files
 .env
 
-# Ignore node_modules
-/node_modules/*
-
+# Ignore node files
 /public/packs
 /public/packs-test
 /node_modules
