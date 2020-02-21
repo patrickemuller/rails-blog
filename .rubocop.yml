@@ -32,6 +32,7 @@ AllCops:
     - 'bin/**/*'
     - 'config/**/*'
     - 'coverage/**/*'
+    - 'node_modules/**/*'
     - 'db/schema.rb'
     - 'db/migrate/*'
     - 'lib/**/*'

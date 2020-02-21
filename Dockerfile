@@ -1,8 +1,14 @@
 FROM ruby:2.7.0
 # Update the Packages
 RUN apt-get update
-# Install container dependencies
-RUN apt-get install -y vim libc-ares2 postgresql-client nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
+# Install container dependencies, including NodeJS
+RUN apt-get install -y vim libc-ares2 postgresql-client build-essential nodejs npm --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/* \
+# Install Yarn direct from NodeJS
+RUN npm -v
+RUN npm install -g yarn
+RUN yarn install --check-files
+RUN yarn -v
 # Install VIM to edit credentials.yml.enc file
 ENV EDITOR="vim --wait"
 # Set the work directory inside container
