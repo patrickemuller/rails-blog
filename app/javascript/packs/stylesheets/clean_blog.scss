@@ -15,6 +15,9 @@ p {
 p a {
   text-decoration: underline;
 }
+h1 {
+  font-size: 55px;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
@@ -152,17 +155,6 @@ hr.small {
 .intro-header .site-heading {
   color: white;
   padding: 60px 0;
-}
-.intro-header .post-heading,
-.intro-header .page-heading {
-  padding: 50px 0 50px;
-  color: white;
-}
-@media only screen and (min-width: 768px) {
-  .intro-header .post-heading,
-  .intro-header .page-heading {
-    padding: 50px 0;
-  }
 }
 .intro-header .site-heading,
 .intro-header .page-heading {
@@ -400,4 +392,13 @@ img::-moz-selection {
 }
 body {
   -webkit-tap-highlight-color: #0085A1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  word-break: break-word;
+}
+
+.lateralContentBorder {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }

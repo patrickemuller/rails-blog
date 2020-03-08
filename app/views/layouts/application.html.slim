@@ -1,7 +1,7 @@
 doctype 5
 
 html
-  head    
+  head
     script src="https://www.google.com/jsapi" type="text/javascript"
     meta[charset="utf-8"]
     /[if lt IE 9]
@@ -19,8 +19,8 @@ html
     / Dynamic Meta tags
     = display_meta_tags
     / Rails imports
-    = stylesheet_link_tag    "application", media: "all"
-    = javascript_include_tag "application"
+    = javascript_pack_tag "application", 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
 
   body

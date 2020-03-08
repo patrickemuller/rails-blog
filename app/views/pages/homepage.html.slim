@@ -12,7 +12,7 @@
 header.intro-header style=("background-color: #0085A1")
   .container
     .row
-      .col-xs-12
+      .col-12
         .site-heading
           h1 Personal Blog
           hr.small
@@ -21,7 +21,7 @@ header.intro-header style=("background-color: #0085A1")
 .container
   - @posts.each do |post|
     .row
-      .col-xs-12
+      .col-12
         .post-preview
           = link_to post_path(post.slug) do
             h2.post-title
@@ -29,8 +29,6 @@ header.intro-header style=("background-color: #0085A1")
             h3.post-subtitle
               = truncate(strip_tags(convert_to_markdown(post.body)), length: 140)
           p.post-meta
-            / | Posted by
-            / a href="#"  Start Bootstrap
             | on #{post.created_at.strftime("%d %B %Y")}
         hr
 

@@ -7,7 +7,6 @@ RUN apt-get install -y vim libc-ares2 postgresql-client build-essential nodejs n
 # Install Yarn direct from NodeJS
 RUN npm -v
 RUN npm install -g yarn
-RUN yarn install --check-files
 RUN yarn -v
 # Install VIM to edit credentials.yml.enc file
 ENV EDITOR="vim --wait"
@@ -19,5 +18,6 @@ COPY Gemfile* /app/
 # Install dependencies
 RUN gem install bundler -v '2.1.4'
 RUN bundle install --jobs 32 --retry 4
+RUN yarn install --check-files
 # Copy all the rest inside work directory
 COPY . /app

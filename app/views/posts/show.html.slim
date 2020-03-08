@@ -9,18 +9,16 @@
                            site: "@patrickemuller",
                            description: truncate(strip_tags(convert_to_markdown(@post.body)), length: 140) }
 
-header.intro-header style=("background-color: #0085A1")
+header.intro-header[style="background-color: #0085A1"]
   .container
     .row
-      .col-xs-12
-        .post-heading
-          h1 = @post.title
-          / h2.subheading Problems look mighty small from 150 miles up
-          span.meta
-            | on #{@post.created_at.strftime("%d %B %Y")}
+      .post-heading.col-12.text-white.mb-5
+        h1 = @post.title
+        span.meta
+          | on #{@post.created_at.strftime("%d %B %Y")}
 
 article
   .container
-    .row
-      .col-xs-12
+      .row
+      .col-12
         = convert_to_markdown(@post.body)

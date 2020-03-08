@@ -10,10 +10,19 @@ services:
       - ".:/app"
     links:
       - postgres
+      - webpacker
     ports:
       - "3000:3000"
     expose:
       - "3000"
+
+  webpacker:
+    build: .
+    command: bin/webpack-dev-server
+    env_file:
+      - ".env"
+    volumes:
+      - ".:/app"
 
   postgres:
     image: postgres:10.4
