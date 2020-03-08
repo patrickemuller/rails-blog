@@ -62,4 +62,5 @@ Rails.application.configure do
     # and a server reload is needed on EVERY file change (except HTML)
     config.file_watcher = ActiveSupport::FileUpdateChecker
   end
+  config.hosts << 'www.example.com'
 end
