@@ -10,11 +10,13 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: postgres
           RAILS_ENV: test
+
       - image: circleci/postgres:9.5-alpine
         environment:
           POSTGRES_DB: rails_blog_test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+
     steps:
       - checkout
 
@@ -24,7 +26,7 @@ jobs:
 
       - run:
           name: Which bundler?
-          command: bundle -v
+          command: bin/bundle -v
 
       - restore_cache:
           keys:
@@ -33,7 +35,7 @@ jobs:
 
       - run:
           name: Bundle Install
-          command: bundle check --path vendor/bundle || bundle install --deployment
+          command: bin/bundle check --path vendor/bundle || bin/bundle install --deployment
 
       - save_cache:
           key: rails-blog-{{ checksum "Gemfile.lock" }}
@@ -49,14 +51,22 @@ jobs:
           command: bin/rails db:setup --trace
 
       - run:
+          name: Install Yarn Packages
+          command: yarn install --check-files
+
+      - run:
+          name: Precompile Webpacker packages
+          command: bin/rails webpacker:compile
+
+      - run:
           name: Rubocop lint
           command: |
-            bundle exec rubocop
+            bin/rubocop
 
       - run:
           name: RSpec
           command: |
-            bundle exec rspec
+            bin/rspec
 
       - store_test_results:
           path: test_results
