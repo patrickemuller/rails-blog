@@ -10,4 +10,13 @@ ActiveAdmin.register Post do
     column :created_at
     actions
   end
+
+  form do |f|
+    f.inputs 'Post Details' do
+      f.input :title
+      f.input :slug
+      f.input :body
+    end
+    f.actions
+  end
 end
