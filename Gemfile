@@ -8,11 +8,10 @@ gem 'rails-i18n', '~> 6.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.2.2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Webpacker as compressor for JavaScript assets
-gem 'webpacker', '~> 4.2.2'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 5.0.0'
+# gem 'sass-rails', '~> 5.0'
+# Use Sprockets as compressor for JavaScript assets
+gem 'sprockets', '~> 4'
+gem 'sprockets-rails', require: 'sprockets/railtie'
 # Simplify your views and HTML files
 gem 'slim-rails'
 # Use jquery as the JavaScript library
@@ -20,7 +19,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Twitter Bootstrap CSS Framework
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.4.1'
 # Devise is a complete User Management for Rails apps
 gem 'devise', '~> 4.7.1'
 # ActiveAdmin is a complete Admin Dashboard for Rails apps
@@ -29,9 +28,6 @@ gem 'activeadmin', '~> 2.6.1'
 gem 'redcarpet', '~> 3.4.0'
 # CodeRay is used for syntax Highlight on HTML
 gem 'coderay', '~> 1.1.1'
-# Add pagination functionality
-gem 'bootstrap-kaminari-views'
-gem 'kaminari', '~> 1.0.1'
 # Icons and other beautiful assets
 gem 'font-awesome-rails', '~> 4.7.0.1'
 # Meta Tags is a simple way to improve SEO of dynamic pages on Rails
@@ -58,5 +54,4 @@ end
 
 group :production do
   gem 'passenger'
-  gem 'rails_12factor'
 end
