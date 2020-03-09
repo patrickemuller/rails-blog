@@ -9,19 +9,10 @@
                            site: "@patrickemuller",
                            description: "My Personal Blog with tips for Ruby on Rails and my experience as Digital Entrepreneur" }
 
-header.intro-header style=("background-color: #0085A1")
-  .container
-    .row
-      .col-xs-12
-        .site-heading
-          h1 Personal Blog
-          hr.small
-          span.subheading Take a coffee, enjoy and learn some stuff =D
-
 .container
   - @posts.each do |post|
     .row
-      .col-xs-12
+      .col-12
         .post-preview
           = link_to post_path(post.slug) do
             h2.post-title
@@ -33,10 +24,3 @@ header.intro-header style=("background-color: #0085A1")
             / a href="#"  Start Bootstrap
             | on #{post.created_at.strftime("%d %B %Y")}
         hr
-
-  / Pagination
-  ul.pager
-    li.next
-      = link_to_next_page @posts, 'Older Posts'
-    li.previous
-      = link_to_previous_page @posts, 'Newer Posts'
